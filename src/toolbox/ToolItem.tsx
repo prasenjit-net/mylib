@@ -3,7 +3,7 @@ import React, { useRef, useLayoutEffect, useState, useCallback } from 'react';
 
 export interface ToolItemProps {
   text: string;
-  icon?: JSX.Element;
+  children?: JSX.Element;
 }
 
 export const ToolItem = (props: ToolItemProps) => {
@@ -38,8 +38,8 @@ export const ToolItem = (props: ToolItemProps) => {
       cursor="pointer"
       draggable={true}
     >
-      {props.icon}
-      <Text>{props.text}</Text>
+      {props.children}
+      <Text fontSize="xs">{props.text}</Text>
     </Flex>
   );
 };
