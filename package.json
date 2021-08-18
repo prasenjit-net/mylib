@@ -25,6 +25,10 @@
     "build-storybook": "build-storybook"
   },
   "peerDependencies": {
+    "@chakra-ui/react": "^1.6.6",
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11",
+    "framer-motion": "^4",
     "react": ">=16"
   },
   "husky": {
@@ -67,5 +71,11 @@
     "tsdx": "^0.14.1",
     "tslib": "^2.3.0",
     "typescript": "^4.3.5"
+  },
+  "dependencies": {
+    "@chakra-ui/react": "^1.6.6",
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11",
+    "framer-motion": "^4"
   }
 }

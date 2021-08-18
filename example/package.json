@@ -8,6 +8,10 @@
     "build": "parcel build index.html"
   },
   "dependencies": {
+    "@chakra-ui/react": "../node_modules/@chakra-ui/react",
+    "@emotion/react": "../node_modules/@emotion/react",
+    "@emotion/styled": "../node_modules/@emotion/styled",
+    "framer-motion": "../node_modules/framer-motion",
     "react-app-polyfill": "^1.0.0"
   },
   "alias": {
@@ -18,7 +22,7 @@
   "devDependencies": {
     "@types/react": "^16.9.11",
     "@types/react-dom": "^16.8.4",
-    "parcel": "^1.12.3",
+    "parcel": "^2.0.0-rc.0",
     "typescript": "^3.4.5"
   }
 }
