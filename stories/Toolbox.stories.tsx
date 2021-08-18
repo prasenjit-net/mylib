@@ -1,7 +1,9 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
 import { ToolboxProps, Toolbox } from '../src';
-import { ChakraProvider, Box, extendTheme } from '@chakra-ui/react';
+import { ChakraProvider, Box, Icon, extendTheme } from '@chakra-ui/react';
+import { GrCheckbox } from 'react-icons/gr';
+import { ToolItem } from '../src/toolbox/ToolItem';
 
 const meta: Meta = {
   title: 'Example/Toolbox',
@@ -16,10 +18,16 @@ const colors = {
 };
 const myTheme = extendTheme({ colors });
 
+const items = ['a', 'b', 'c', 'd', 'e', 'f', 'g'];
+
 const Template: Story<ToolboxProps> = (args) => (
   <ChakraProvider resetCSS={true} theme={myTheme}>
     <Box maxW={400}>
-      <Toolbox {...args} />
+      <Toolbox {...args}>
+        {items.map((i, key) => (
+          <ToolItem text={i} key={key} icon={<Icon as={GrCheckbox} />} />
+        ))}
+      </Toolbox>
     </Box>
   </ChakraProvider>
 );
@@ -28,12 +36,4 @@ export const Default = Template.bind({});
 
 Default.args = {
   title: 'Toolbox',
-  items: ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k'],
 };
-
-export const Test: Story = (args) => (
-  <ChakraProvider>
-    <Box color="red.400">Some Text</Box>
-    <Box bgColor="red.500">Some Other Text</Box>
-  </ChakraProvider>
-);

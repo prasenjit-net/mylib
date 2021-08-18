@@ -28,12 +28,15 @@ export const ToolItem = (props: ToolItemProps) => {
       ref={itemRef}
       height={height}
       border="1px"
-      borderColor={'gray.300'}
-      bgColor={'gray.100'}
+      borderColor="gray.300"
+      boxShadow="md"
+      bgColor="gray.50"
       rounded="md"
       direction="column"
-      alignItems={'center'}
-      justifyContent={'space-around'}
+      alignItems="center"
+      justifyContent="center"
+      cursor="pointer"
+      draggable={true}
     >
       {props.icon}
       <Text>{props.text}</Text>
