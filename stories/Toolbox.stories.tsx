@@ -1,7 +1,6 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
 import { ToolboxProps, Toolbox } from '../src';
-import { ChakraProvider, Flex, extendTheme } from '@chakra-ui/react';
 import { GrCheckbox } from 'react-icons/gr';
 import { BsPersonBoundingBox, BsInboxes } from 'react-icons/bs';
 import { FaXbox } from 'react-icons/fa';
@@ -14,13 +13,6 @@ const meta: Meta = {
 };
 export default meta;
 
-const colors = {
-  brand: {
-    400: '#845EC2',
-  },
-};
-const myTheme = extendTheme({ colors });
-
 const items = [
   { text: 'Checkbox', icon: GrCheckbox },
   { text: 'Person In Box', icon: BsPersonBoundingBox },
@@ -32,13 +24,8 @@ const items = [
 ];
 
 const Template: Story<ToolboxProps> = (args) => (
-  <ChakraProvider resetCSS={true} theme={myTheme}>
-    <Flex maxW={400} height="90vh" direction="row" alignItems="stretch">
-      <Toolbox {...args} items={items} />
-    </Flex>
-  </ChakraProvider>
+  <Toolbox {...args} items={items} />
 );
-
 export const Default = Template.bind({});
 
 Default.args = {
