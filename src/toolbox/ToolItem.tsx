@@ -1,9 +1,15 @@
-import { Flex, Text } from '@chakra-ui/react';
-import React, { useRef, useLayoutEffect, useState, useCallback } from 'react';
+import { Flex, Text, Icon } from '@chakra-ui/react';
+import React, {
+  useRef,
+  useLayoutEffect,
+  useState,
+  useCallback,
+  FunctionComponent,
+} from 'react';
 
 export interface ToolItemProps {
   text: string;
-  children?: JSX.Element;
+  icon?: FunctionComponent;
 }
 
 export const ToolItem = (props: ToolItemProps) => {
@@ -37,8 +43,9 @@ export const ToolItem = (props: ToolItemProps) => {
       justifyContent="center"
       cursor="pointer"
       draggable={true}
+      _hover={{ boxShadow: 'lg' }}
     >
-      {props.children}
+      <Icon as={props.icon} fontSize="2xl" mb={2} />
       <Text fontSize="xs">{props.text}</Text>
     </Flex>
   );
