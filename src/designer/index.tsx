@@ -6,5 +6,9 @@ export interface DesignerProps {
 }
 
 export const Designer = ({ text }: DesignerProps) => {
-  return <VStack>{text}</VStack>;
+  return (
+    <VStack>
+      <span>{text}</span>
+    </VStack>
+  );
 };

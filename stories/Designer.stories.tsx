@@ -12,4 +12,6 @@ const Template: Story<DesignerProps> = (args) => <Designer {...args} />;
 
 export const Default = Template.bind({});
 
-Default.args = {};
+Default.args = {
+  text: 'Sample Designer',
+};

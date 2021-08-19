@@ -1661,6 +1661,36 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
+"@craftjs/core@^0.1.0-beta.20":
+  version "0.1.0-beta.20"
+  resolved "https://registry.yarnpkg.com/@craftjs/core/-/core-0.1.0-beta.20.tgz#7d9140fdb8f962cb4ff701024f7a3cf43f6bdfa6"
+  integrity sha512-AdX597cnoY8ktPKnh8tE6FRe+uz82DAsy9GyruRUQc7/mClvoO45zjCVFT2MngwW8PaH9xAVeEko2si8ScGeDw==
+  dependencies:
+    "@craftjs/utils" "^0.1.0-beta.20"
+    "@types/react" "^17.0.5"
+    debounce "^1.2.0"
+    lodash "^4.17.20"
+    tiny-invariant "^1.0.6"
+
+"@craftjs/layers@^0.1.0-beta.20":
+  version "0.1.0-beta.20"
+  resolved "https://registry.yarnpkg.com/@craftjs/layers/-/layers-0.1.0-beta.20.tgz#86adad803efd20e6295bc0a4d71a0e278baef696"
+  integrity sha512-HR54QkcQZOk/VwFP4l0l4OKk2RkBiYkSyKeKjzV7F2kGa9Vt6VyrTshASdwihSZrpo8jdz3qHVJIKhaRWcoGiQ==
+  dependencies:
+    "@craftjs/utils" "^0.1.0-beta.20"
+
+"@craftjs/utils@^0.1.0-beta.20":
+  version "0.1.0-beta.20"
+  resolved "https://registry.yarnpkg.com/@craftjs/utils/-/utils-0.1.0-beta.20.tgz#2ba535b043e45368dc60bcf06614dab5ba2d0899"
+  integrity sha512-KevLljnpEvHxpB2nxRZyQG2i4GDivIkY58depi+ynQP2ALonNuxEGVO2QsuDJ+p1z4eOtv0Xi/D3o6Qr84eAzQ==
+  dependencies:
+    "@types/react" "^17.0.5"
+    immer "^8.0.1"
+    lodash "^4.17.20"
+    nanoid "^3.1.23"
+    shallowequal "^1.1.0"
+    tiny-invariant "^1.0.6"
+
 "@emotion/babel-plugin@^11.3.0":
   version "11.3.0"
   resolved "https://registry.yarnpkg.com/@emotion/babel-plugin/-/babel-plugin-11.3.0.tgz#3a16850ba04d8d9651f07f3fb674b3436a4fb9d7"
@@ -3479,6 +3509,15 @@
   version "17.0.17"
   resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.17.tgz#1772d3d5425128e0635a716f49ef57c2955df055"
   integrity sha512-nrfi7I13cAmrd0wje8czYpf5SFbryczCtPzFc6ijqvdjKcyA3tCvGxwchOUlxb2ucBPuJ9Y3oUqKrRqZvrz0lw==
+  dependencies:
+    "@types/prop-types" "*"
+    "@types/scheduler" "*"
+    csstype "^3.0.2"
+
+"@types/react@^17.0.5":
+  version "17.0.19"
+  resolved "https://registry.yarnpkg.com/@types/react/-/react-17.0.19.tgz#8f2a85e8180a43b57966b237d26a29481dacc991"
+  integrity sha512-sX1HisdB1/ZESixMTGnMxH9TDe8Sk709734fEQZzCV/4lSu9kJCPbo2PbTRoZM+53Pp0P10hYVyReUueGwUi4A==
   dependencies:
     "@types/prop-types" "*"
     "@types/scheduler" "*"
@@ -5707,6 +5746,11 @@ data-urls@^1.1.0:
     whatwg-mimetype "^2.2.0"
     whatwg-url "^7.0.0"
 
+debounce@^1.2.0:
+  version "1.2.1"
+  resolved "https://registry.yarnpkg.com/debounce/-/debounce-1.2.1.tgz#38881d8f4166a5c5848020c11827b834bcb3e0a5"
+  integrity sha512-XRRe6Glud4rd/ZGQfiV1ruXSfbvfJedlV9Y6zOlP+2K04vBYiJEte6stfFkCP03aMnY5tsipamumUjL14fofug==
+
 debug@2.6.9, debug@^2.2.0, debug@^2.3.3, debug@^2.6.0, debug@^2.6.9:
   version "2.6.9"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
@@ -7872,6 +7916,11 @@ immer@8.0.1:
   version "8.0.1"
   resolved "https://registry.yarnpkg.com/immer/-/immer-8.0.1.tgz#9c73db683e2b3975c424fb0572af5889877ae656"
   integrity sha512-aqXhGP7//Gui2+UrEtvxZxSquQVXTpZ7KDxfCcKAF3Vysvw0CViVaW9RZ1j1xlIYqaaaipBoqdqeibkc18PNvA==
+
+immer@^8.0.1:
+  version "8.0.4"
+  resolved "https://registry.yarnpkg.com/immer/-/immer-8.0.4.tgz#3a21605a4e2dded852fb2afd208ad50969737b7a"
+  integrity sha512-jMfL18P+/6P6epANRvRk6q8t+3gGhqsJ9EuJ25AXE+9bNTYtssvzeYbEd0mXRYWCmmXSIbnlpz6vd6iJlmGGGQ==
 
 import-fresh@^3.0.0, import-fresh@^3.1.0, import-fresh@^3.2.1:
   version "3.3.0"
