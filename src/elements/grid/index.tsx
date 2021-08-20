@@ -3,6 +3,8 @@ import { Grid as ChakraGrid } from '@chakra-ui/react';
 import { useNode } from '@craftjs/core';
 import { GridSettings } from './GridSettings';
 
+export * from './GridSettings';
+
 export interface GridProps {
   children?: ReactNode;
   m?: string;

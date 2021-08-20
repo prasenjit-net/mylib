@@ -1,13 +1,13 @@
-export * from './Section';
-export * from './Viewport';
-export * from './Grid';
+export * from './section';
+export * from './viewport';
+export * from './grid';
 
 import React from 'react';
 import { BiRectangle } from 'react-icons/bi';
 import { BsGrid3X2 } from 'react-icons/bs';
 import { Element } from '@craftjs/core';
-import { Section } from './Section';
-import { Grid } from './Grid';
+import { Section } from './section';
+import { Grid } from './grid';
 
 export const DEFAULT_TOOLS = [
   {

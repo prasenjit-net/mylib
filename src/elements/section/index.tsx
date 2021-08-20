@@ -2,6 +2,8 @@ import React, { ReactNode } from 'react';
 import { useNode } from '@craftjs/core';
 import { Flex } from '@chakra-ui/react';
 
+export * from './SectionSettings';
+
 export interface SectionProps {
   children?: ReactNode;
 }
