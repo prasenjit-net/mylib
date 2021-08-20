@@ -70,11 +70,11 @@ export const Decorator = ({ render }: DecoratorProps) => {
   useEffect(() => {
     // @ts-ignore
     document
-      .querySelector('.craftjs-renderer')
+      .querySelector('.craft-js-renderer')
       .addEventListener('scroll', scroll);
 
     return () => {
-      const renderer = document.querySelector('.craftjs-renderer');
+      const renderer = document.querySelector('.craft-js-renderer');
       if (renderer) {
         renderer.removeEventListener('scroll', scroll);
       }

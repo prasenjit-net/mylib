@@ -4,9 +4,7 @@ import { ToolItem, ToolItemProps } from './ToolItem';
 
 export interface ToolboxProps {
   title: string;
-  color: string;
   items: ToolItemProps[];
-  children?: JSX.Element[] | JSX.Element;
 }
 
 export const Toolbox = (props: ToolboxProps) => {
@@ -28,3 +26,5 @@ export const Toolbox = (props: ToolboxProps) => {
     </Flex>
   );
 };
+
+export * from './ToolItem';
