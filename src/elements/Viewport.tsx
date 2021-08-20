@@ -3,7 +3,7 @@ import { useNode } from '@craftjs/core';
 import { Box } from '@chakra-ui/react';
 
 export interface ViewportProps {
-  children: ReactNode;
+  children?: ReactNode;
 }
 
 export const Viewport = ({ children }: ViewportProps) => {

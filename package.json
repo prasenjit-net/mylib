@@ -1,5 +1,5 @@
 {
-  "name": "mylib",
+  "name": "@prasenjit-net/mylib",
   "author": "Prasenjit Purohit",
   "version": "0.1.0",
   "license": "MIT",
@@ -80,5 +80,8 @@
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
     "framer-motion": "^4"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   }
 }

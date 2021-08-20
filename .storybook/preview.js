@@ -1,4 +1,4 @@
-import { Flex, ChakraProvider, extendTheme } from '@chakra-ui/react';
+import { ChakraProvider, extendTheme } from '@chakra-ui/react';
 
 // https://storybook.js.org/docs/react/writing-stories/parameters#global-parameters
 export const parameters = {
@@ -15,9 +15,7 @@ const myTheme = extendTheme({ colors });
 export const decorators = [
   (Story) => (
     <ChakraProvider resetCSS={true} theme={myTheme}>
-      <Flex maxW={400} height="90vh" direction="row" alignItems="stretch">
-        <Story />
-      </Flex>
+      <Story />
     </ChakraProvider>
   ),
 ];

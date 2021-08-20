@@ -3,7 +3,7 @@ import { useNode } from '@craftjs/core';
 import { Flex } from '@chakra-ui/react';
 
 export interface SectionProps {
-  children: ReactNode;
+  children?: ReactNode;
 }
 
 export const Section = ({ children }: SectionProps) => {

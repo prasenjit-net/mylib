@@ -13,7 +13,7 @@ export interface TemplateEditorProps {
 }
 
 export const TemplateEditor = ({ elements, items }: TemplateEditorProps) => {
-  const combinedResolver = elements;
+  const combinedResolver = elements ? elements : {};
   combinedResolver['Section'] = Section;
   combinedResolver['Viewport'] = Viewport;
   const designRef = useRef<HTMLDivElement>(null);
@@ -23,7 +23,7 @@ export const TemplateEditor = ({ elements, items }: TemplateEditorProps) => {
       resolver={combinedResolver}
       onRender={Decorator as FunctionComponent}
     >
-      <Flex w="100%" py={1} px={2}>
+      <Flex w="100%" height="100%" py={1} px={2}>
         <Designer designRef={designRef} />
         <Toolbox title="Toolbox" items={items} />
       </Flex>

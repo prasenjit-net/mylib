@@ -32,7 +32,7 @@ export const ToolItem = (props: ToolItemProps) => {
   return (
     <Flex
       ref={itemRef}
-      height={height}
+      height={height + 'px'}
       border="1px"
       borderColor="gray.300"
       boxShadow="md"
