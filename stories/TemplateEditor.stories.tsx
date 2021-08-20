@@ -1,8 +1,7 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
-import { TemplateEditor, TemplateEditorProps } from '../src';
-import { items } from '../src/helper/ToolboxData';
 import { Box } from '@chakra-ui/react';
+import { TemplateEditor, TemplateEditorProps } from '../src';
 
 export default {
   title: 'Example/Editor',
@@ -16,6 +15,4 @@ const Template: Story<TemplateEditorProps> = (args: TemplateEditorProps) => (
 );
 
 export const Default = Template.bind({});
-Default.args = {
-  items,
-};
+Default.args = {};

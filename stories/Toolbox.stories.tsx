@@ -1,8 +1,7 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
-import { ToolboxProps, Toolbox } from '../src';
-import { items } from '../src/helper/ToolboxData';
 import { Flex } from '@chakra-ui/react';
+import { ToolboxProps, Toolbox } from '../src';
 
 const meta: Meta = {
   title: 'Example/Toolbox',
@@ -19,5 +18,4 @@ export const Default = Template.bind({});
 
 Default.args = {
   title: 'Toolbox',
-  items,
 };
