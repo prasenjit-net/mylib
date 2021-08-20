@@ -6,7 +6,7 @@ export interface SectionProps {
   children?: ReactNode;
 }
 
-export const Section = ({ children }: SectionProps) => {
+export const Section = ({ children, ...props }: SectionProps) => {
   const {
     connectors: { connect },
   } = useNode();
@@ -15,9 +15,8 @@ export const Section = ({ children }: SectionProps) => {
       ref={(ref) => connect(ref as HTMLDivElement)}
       as="section"
       minHeight={10}
-      bgColor="gray.200"
-      m="2"
       alignItems="stretch"
+      {...props}
     >
       {children}
     </Flex>
@@ -26,6 +25,10 @@ export const Section = ({ children }: SectionProps) => {
 
 Section.craft = {
   name: 'Section',
+  props: {
+    m: '2',
+    bgColor: 'gray.200',
+  },
   rules: {
     canMoveIn: () => true,
   },
