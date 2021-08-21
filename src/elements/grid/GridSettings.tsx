@@ -1,12 +1,11 @@
 import React from 'react';
 import {
   Box,
-  NumberIncrementStepper,
-  NumberDecrementStepper,
-  NumberInputStepper,
-  NumberInputField,
-  NumberInput,
+  FormHelperText,
   FormLabel,
+  HStack,
+  Radio,
+  RadioGroup,
   FormControl,
 } from '@chakra-ui/react';
 import { useNode } from '@craftjs/core';
@@ -18,20 +17,22 @@ export const GridSettings = () => {
   } = useNode((node) => ({
     props: node.data.props,
   }));
-  const setSize = (valueAsString: string) => {
+  const setGridSize = (valueAsString: string) => {
     setProp((prp) => (prp.gridCount = valueAsString));
   };
   return (
     <Box>
-      <FormControl id="amount">
-        <FormLabel>Column Count</FormLabel>
-        <NumberInput max={5} min={1} onChange={setSize} value={props.gridCount}>
-          <NumberInputField />
-          <NumberInputStepper>
-            <NumberIncrementStepper />
-            <NumberDecrementStepper />
-          </NumberInputStepper>
-        </NumberInput>
+      <FormControl as="fieldset">
+        <FormLabel as="legend">Column Count</FormLabel>
+        <RadioGroup value={props.gridCount} onChange={setGridSize}>
+          <HStack spacing="24px">
+            <Radio value="1">One</Radio>
+            <Radio value="2">Two</Radio>
+            <Radio value="3">Three</Radio>
+            <Radio value="4">Four</Radio>
+          </HStack>
+        </RadioGroup>
+        <FormHelperText>Select how many columns are needed</FormHelperText>
       </FormControl>
     </Box>
   );
