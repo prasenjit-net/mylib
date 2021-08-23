@@ -8,8 +8,8 @@ import {
   Radio,
   FormHelperText,
 } from '@chakra-ui/react';
-import { CompactPicker } from 'react-color';
 import { useNode } from '@craftjs/core';
+import { ColorPicker } from './ColorPicker';
 
 export interface DefaultSettingsProps {
   children?: ReactNode;
@@ -61,17 +61,17 @@ export const DefaultSettings = ({ children }: DefaultSettingsProps) => {
       </FormControl>
       <FormControl as="fieldset">
         <FormLabel as="legend">Text Color</FormLabel>
-        <CompactPicker
-          color={props.bgColor}
-          onChangeComplete={(color) => setProp((p) => (p.bgColor = color.hex))}
+        <ColorPicker
+          value={props.bgColor}
+          onChange={(e) => setProp((p) => (p.bgColor = e.target.value))}
         />
         <FormHelperText>Changes text color of element</FormHelperText>
       </FormControl>
       <FormControl as="fieldset">
         <FormLabel as="legend">Text Color</FormLabel>
-        <CompactPicker
-          color={props.color}
-          onChangeComplete={(color) => setProp((p) => (p.color = color.hex))}
+        <ColorPicker
+          value={props.color}
+          onChange={(e) => setProp((p) => (p.color = e.target.value))}
         />
         <FormHelperText>Changes text color of element</FormHelperText>
       </FormControl>
