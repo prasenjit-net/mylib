@@ -1,7 +1,8 @@
 import React from 'react';
+import { DefaultSettings } from '../../components';
 
 export interface SectionSettingsProps {}
 
-export const SectionSettings = () => {
-  return <div></div>;
+export const SectionSettings = ({}: SectionSettingsProps) => {
+  return <DefaultSettings />;
 };

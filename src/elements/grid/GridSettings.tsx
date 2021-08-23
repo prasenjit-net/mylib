@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  Box,
   FormHelperText,
   FormLabel,
   HStack,
@@ -9,6 +8,7 @@ import {
   FormControl,
 } from '@chakra-ui/react';
 import { useNode } from '@craftjs/core';
+import { DefaultSettings } from '../../components';
 
 export const GridSettings = () => {
   const {
@@ -21,7 +21,7 @@ export const GridSettings = () => {
     setProp((prp) => (prp.gridCount = valueAsString));
   };
   return (
-    <Box>
+    <DefaultSettings>
       <FormControl as="fieldset">
         <FormLabel as="legend">Column Count</FormLabel>
         <RadioGroup value={props.gridCount} onChange={setGridSize}>
@@ -34,6 +34,6 @@ export const GridSettings = () => {
         </RadioGroup>
         <FormHelperText>Select how many columns are needed</FormHelperText>
       </FormControl>
-    </Box>
+    </DefaultSettings>
   );
 };

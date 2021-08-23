@@ -1,6 +1,7 @@
 import React, { ReactNode } from 'react';
 import { useNode } from '@craftjs/core';
 import { Flex } from '@chakra-ui/react';
+import { SectionSettings } from './SectionSettings';
 
 export * from './SectionSettings';
 
@@ -28,10 +29,14 @@ export const Section = ({ children, ...props }: SectionProps) => {
 Section.craft = {
   name: 'Section',
   props: {
-    m: '2',
-    bgColor: 'gray.200',
+    margin: '2',
+    bgColor: '#DCE9F3',
+    color: '#000000',
   },
   rules: {
     canMoveIn: () => true,
+  },
+  related: {
+    settings: SectionSettings,
   },
 };

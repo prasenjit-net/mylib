@@ -37,7 +37,7 @@ export const Settings = ({ isOpen, onClose }: SettingsProps) => {
     };
   });
   return (
-    <Modal isOpen={isOpen} onClose={onClose}>
+    <Modal isOpen={isOpen} onClose={onClose} size="xl" scrollBehavior="inside">
       <ModalOverlay />
       <ModalContent>
         <ModalHeader>Settings - {selected?.name}</ModalHeader>

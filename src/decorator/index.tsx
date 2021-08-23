@@ -95,7 +95,7 @@ export const Decorator = ({ render }: DecoratorProps) => {
                 position: 'fixed',
                 left: getPos(dom).left,
                 top: getPos(dom).top,
-                zIndex: 9999,
+                zIndex: 999,
               }}
             >
               <Heading as="h6" size="sm">

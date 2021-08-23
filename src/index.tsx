@@ -5,3 +5,4 @@ export * from './settings';
 export * from './elements';
 export * from './editor';
 export * from './layers';
+export * from './components';
