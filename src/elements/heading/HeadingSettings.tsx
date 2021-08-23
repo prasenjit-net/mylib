@@ -36,6 +36,23 @@ export const HeadingSettings = () => {
         </RadioGroup>
         <FormHelperText>Simple margin on all four side</FormHelperText>
       </FormControl>
+      <FormControl as="fieldset">
+        <FormLabel as="legend">Font Weight</FormLabel>
+        <RadioGroup
+          value={props.fontWeight}
+          onChange={(next) => setProp((p) => (p.fontWeight = next))}
+        >
+          <HStack spacing="24px">
+            <Radio value="bold">bold</Radio>
+            <Radio value="semibold">semibold</Radio>
+            <Radio value="medium">medium</Radio>
+            <Radio value="normal">normal</Radio>
+            <Radio value="light">light</Radio>
+            <Radio value="thin">thin</Radio>
+          </HStack>
+        </RadioGroup>
+        <FormHelperText>Changes font weight for text</FormHelperText>
+      </FormControl>
     </DefaultSettings>
   );
 };

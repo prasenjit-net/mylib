@@ -1,5 +1,5 @@
 import React from 'react';
-import { Heading as ChakraHeading } from '@chakra-ui/react';
+import { Editable, EditableInput, EditablePreview } from '@chakra-ui/react';
 import { useNode } from '@craftjs/core';
 import { HeadingSettings } from './HeadingSettings';
 
@@ -12,15 +12,21 @@ export interface HeadingProps {
 export const Heading = ({ text, ...rest }: HeadingProps) => {
   const {
     connectors: { connect },
-  } = useNode();
+    actions: { setProp },
+    // props,
+  } = useNode((node) => ({
+    props: node.data.props,
+  }));
   return (
-    <ChakraHeading
-      fontSize="2xl"
+    <Editable
+      value={text}
+      onChange={(nv) => setProp((p) => (p.text = nv))}
       ref={(ref) => connect(ref as HTMLElement)}
-      {...rest}
+      fontWeight=""
     >
-      {text}
-    </ChakraHeading>
+      <EditablePreview {...rest} />
+      <EditableInput {...rest} />
+    </Editable>
   );
 };
 
@@ -29,6 +35,7 @@ Heading.craft = {
   props: {
     margin: '2',
     fontSize: '2xl',
+    fontWeight: 'bold',
   },
   rules: {
     canMoveIn: () => true,
