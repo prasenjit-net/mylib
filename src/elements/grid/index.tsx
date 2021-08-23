@@ -35,7 +35,7 @@ export const Grid = ({ children, gridCount, ...props }: GridProps) => {
 Grid.craft = {
   name: 'Grid',
   props: {
-    m: '2',
+    margin: '2',
     bgColor: 'gray.300',
     gridCount: '2',
   },

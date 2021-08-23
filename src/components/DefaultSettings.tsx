@@ -60,12 +60,12 @@ export const DefaultSettings = ({ children }: DefaultSettingsProps) => {
         <FormHelperText>Simple padding on all four side</FormHelperText>
       </FormControl>
       <FormControl as="fieldset">
-        <FormLabel as="legend">Text Color</FormLabel>
+        <FormLabel as="legend">Background Color</FormLabel>
         <ColorPicker
           value={props.bgColor}
           onChange={(e) => setProp((p) => (p.bgColor = e.target.value))}
         />
-        <FormHelperText>Changes text color of element</FormHelperText>
+        <FormHelperText>Changes background color of element</FormHelperText>
       </FormControl>
       <FormControl as="fieldset">
         <FormLabel as="legend">Text Color</FormLabel>

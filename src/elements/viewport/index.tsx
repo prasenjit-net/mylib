@@ -1,6 +1,9 @@
 import React, { ReactNode } from 'react';
 import { useNode } from '@craftjs/core';
 import { Box } from '@chakra-ui/react';
+import { ViewportSettings } from './ViewportSettings';
+
+export * from './ViewportSettings';
 
 export interface ViewportProps {
   m?: string;
@@ -12,7 +15,12 @@ export const Viewport = ({ children, ...rest }: ViewportProps) => {
     connectors: { connect },
   } = useNode();
   return (
-    <Box as="main" {...rest} ref={(ref) => connect(ref as HTMLDivElement)}>
+    <Box
+      as="main"
+      h="100%"
+      {...rest}
+      ref={(ref) => connect(ref as HTMLDivElement)}
+    >
       {children}
     </Box>
   );
@@ -21,9 +29,12 @@ export const Viewport = ({ children, ...rest }: ViewportProps) => {
 Viewport.craft = {
   name: 'Viewport',
   props: {
-    m: '2',
+    margin: '2',
   },
   rules: {
     canMoveIn: () => true,
+  },
+  related: {
+    settings: ViewportSettings,
   },
 };
