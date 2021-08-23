@@ -9,7 +9,7 @@ export interface ToolGroupProps {
 
 export const ToolGroup = ({ items }: ToolGroupProps) => {
   return (
-    <Grid boxShadow="lg" flex={1}>
+    <Grid boxShadow="lg" flex={1} p={2}>
       <Toolbox items={items} />
       <Box>
         <Divider />
