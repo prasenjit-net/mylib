@@ -1,8 +1,23 @@
 import React from 'react';
 import { useEditor } from '@craftjs/core';
-import { Box } from '@chakra-ui/react';
+import {
+  Modal,
+  ModalOverlay,
+  ModalContent,
+  ModalHeader,
+  ModalCloseButton,
+  ModalBody,
+  ModalFooter,
+  Button,
+  Text,
+} from '@chakra-ui/react';
 
-export const Settings = () => {
+export interface SettingsProps {
+  isOpen: boolean;
+  onClose: () => void;
+}
+
+export const Settings = ({ isOpen, onClose }: SettingsProps) => {
   const { selected } = useEditor((state) => {
     const currentNodeId = state.events.selected;
     let selected;
@@ -10,7 +25,7 @@ export const Settings = () => {
     if (currentNodeId) {
       selected = {
         id: currentNodeId,
-        name: state.nodes[currentNodeId].data.name,
+        name: state.nodes[currentNodeId].data.displayName,
         settings:
           state.nodes[currentNodeId].related &&
           state.nodes[currentNodeId].related.settings,
@@ -21,7 +36,26 @@ export const Settings = () => {
       selected,
     };
   });
-  return selected ? (
-    <Box>{selected.settings && React.createElement(selected.settings)}</Box>
-  ) : null;
+  return (
+    <Modal isOpen={isOpen} onClose={onClose}>
+      <ModalOverlay />
+      <ModalContent>
+        <ModalHeader>Settings - {selected?.name}</ModalHeader>
+        <ModalCloseButton />
+        <ModalBody>
+          {selected?.settings ? (
+            React.createElement(selected.settings)
+          ) : (
+            <Text>No settings available</Text>
+          )}
+        </ModalBody>
+
+        <ModalFooter>
+          <Button colorScheme="blue" mr={3} onClick={onClose}>
+            Close
+          </Button>
+        </ModalFooter>
+      </ModalContent>
+    </Modal>
+  );
 };

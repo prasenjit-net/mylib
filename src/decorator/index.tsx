@@ -8,14 +8,16 @@ import React, {
 } from 'react';
 import { ROOT_NODE, useEditor, useNode } from '@craftjs/core';
 import { createPortal } from 'react-dom';
-import { Flex, Heading, IconButton } from '@chakra-ui/react';
-import { BsArrowsMove, BsArrowUp, BsTrash } from 'react-icons/bs';
+import { Flex, Heading, IconButton, useDisclosure } from '@chakra-ui/react';
+import { BsArrowsMove, BsArrowUp, BsGear, BsTrash } from 'react-icons/bs';
+import { Settings } from '../settings';
 
 export interface DecoratorProps {
   render: FunctionComponent | ClassicComponent;
 }
 
 export const Decorator = ({ render }: DecoratorProps) => {
+  const { isOpen, onOpen, onClose } = useDisclosure();
   const { id } = useNode();
   const { actions, query, isActive, otherActive } = useEditor((state) => ({
     isActive: state.nodes[id].events.selected,
@@ -135,11 +137,22 @@ export const Decorator = ({ render }: DecoratorProps) => {
                   icon={<BsTrash />}
                 />
               )}
+              {isActive && (
+                <IconButton
+                  aria-label="settings"
+                  colorScheme="cyan.300"
+                  color="black"
+                  size="xs"
+                  icon={<BsGear />}
+                  onClick={onOpen}
+                />
+              )}
             </Flex>,
             document.querySelector('.page-container') as Element
           )
         : null}
       {render}
+      <Settings isOpen={isOpen} onClose={onClose} />
     </>
   );
 };
