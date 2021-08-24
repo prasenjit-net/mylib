@@ -7,6 +7,9 @@ export * from './HeadingSettings';
 
 export interface HeadingProps {
   text: string;
+  margin?: string;
+  fontSize?: string;
+  fontWeight?: string;
 }
 
 export const Heading = ({ text, ...rest }: HeadingProps) => {

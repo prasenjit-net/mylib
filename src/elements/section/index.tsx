@@ -32,6 +32,7 @@ Section.craft = {
     margin: '2',
     bgColor: '#DCE9F3',
     color: '#000000',
+    direction: 'row',
   },
   rules: {
     canMoveIn: () => true,
